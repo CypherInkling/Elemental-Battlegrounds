@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elemental Battlegrounds</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TITLE SCREEN -->
+<div id="titleScreen" class="screen">
+  <div id="titleAnimation">Elemental Battlegrounds</div>
+  <div class="menu-buttons">
+    <button id="arcadeBtn">Arcade Mode</button>
+    <button id="practiceBtn">Practice Mode</button>
+    <button id="settingsBtn">Settings</button>
+    <button id="controlsBtn">Controls</button>
+  </div>
+</div>
+
+<!-- CHARACTER SELECT SCREEN -->
+<div id="charSelectScreen" class="screen hidden">
+  <h2>Select Your Fighter</h2>
+  <div class="char-grid">
+    <!-- Characters dynamically populated -->
+  </div>
+  <button id="charNextBtn">Next</button>
+</div>
+
+<!-- CPU SELECT SCREEN -->
+<div id="cpuSelectScreen" class="screen hidden">
+  <h2>Select Opponent</h2>
+  <div class="char-grid">
+    <!-- CPU characters dynamically populated -->
+  </div>
+  <div class="difficulty-buttons">
+    <button data-diff="easy">Easy</button>
+    <button data-diff="medium">Medium</button>
+    <button data-diff="hard">Hard</button>
+  </div>
+  <button id="cpuNextBtn">Next</button>
+</div>
+
+<!-- MAP SELECT SCREEN -->
+<div id="mapSelectScreen" class="screen hidden">
+  <h2>Select Map</h2>
+  <div class="map-grid">
+    <!-- Maps dynamically populated -->
+  </div>
+  <button id="mapNextBtn">Next</button>
+</div>
+
+<!-- VS SCREEN -->
+<div id="vsScreen" class="screen hidden">
+  <canvas id="vsCanvas" width="800" height="400"></canvas>
+</div>
+
+<!-- FIGHT SCREEN -->
+<div id="fightScreen" class="screen hidden">
+  <canvas id="fightCanvas" width="800" height="400"></canvas>
+  <div class="health-bar" id="playerHealth"><span class="name" id="playerName"></span><div class="fill"></div></div>
+  <div class="health-bar" id="cpuHealth"><span class="name" id="cpuName"></span><div class="fill"></div></div>
+
+  <div id="mobileControls">
+    <div id="leftControls">
+      <button id="leftBtn">◀</button>
+      <button id="rightBtn">▶</button>
+      <button id="jumpBtn">▲</button>
+    </div>
+    <div id="rightControls">
+      <button id="attackBtn">A</button>
+      <button id="specialBtn">S</button>
+      <button id="ultimateBtn">U</button>
+    </div>
+    <button id="pauseBtn">⏸</button>
+  </div>
+
+  <div id="pauseMenu" class="hidden">
+    <button id="returnTitleBtn">Return to Title</button>
+    <button id="returnCharBtn">Return to Character Select</button>
+    <button id="returnMapBtn">Return to Map Select</button>
+  </div>
+</div>
+
+<!-- SETTINGS SCREEN -->
+<div id="settingsScreen" class="screen hidden">
+  <h2>Settings</h2>
+  <label>Volume <input type="range" min="0" max="100" value="50" id="volumeSlider"></label>
+  <button id="backSettingsBtn">Back</button>
+</div>
+
+<!-- CONTROLS SCREEN -->
+<div id="controlsScreen" class="screen hidden">
+  <h2>Controls</h2>
+  <p>Left/Right/Jump on left, Attack/Special/Ultimate on right, Pause top-center.</p>
+  <button id="backControlsBtn">Back</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
